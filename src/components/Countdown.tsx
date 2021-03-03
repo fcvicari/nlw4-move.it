@@ -1,4 +1,4 @@
-import { Button, Center, Container, Grid } from '@chakra-ui/react';
+import { Button, Container, Grid, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 export function Countdown() {
@@ -27,32 +27,34 @@ export function Countdown() {
 
   return (
     <Grid>
-      <Center>
-        <Container
-          variant="countdownContainer"
-          margin="0"
-          padding="0"
-          flex="1"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid templateColumns="2.3fr 2.3fr 0.8fr 2.3fr 2.3fr">
-            <Container variant="countdownNumber" marginRight="0.1rem">
-              {minuteLeft}
-            </Container>
-            <Container variant="countdownNumber" marginLeft="0.1rem">
-              {minuteRight}
-            </Container>
-            <Container variant="countdown">:</Container>
-            <Container variant="countdownNumber" marginRight="0.1rem">
-              {secondLeft}
-            </Container>
-            <Container variant="countdownNumber" marginLeft="0.1rem">
-              {secondRight}
-            </Container>
-          </Grid>
+      <Container
+        variant="countdownContainer"
+        margin="0"
+        padding="0"
+        flex="1"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Container variant="countdownNumber">
+          <Text as="span" variant="countdownRight">
+            {minuteLeft}
+          </Text>
+          <Text as="span" variant="countdownLeft">
+            {minuteRight}
+          </Text>
         </Container>
-      </Center>
+        <Text as="span" variant="countdown">
+          :
+        </Text>
+        <Container variant="countdownNumber">
+          <Text as="span" variant="countdownRight">
+            {secondLeft}
+          </Text>
+          <Text as="span" variant="countdownLeft">
+            {secondRight}
+          </Text>
+        </Container>
+      </Container>
       <Button
         onClick={startCountdown}
         marginTop="2rem"
