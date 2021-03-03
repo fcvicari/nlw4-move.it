@@ -1,26 +1,30 @@
-import { Button } from '@chakra-ui/react';
-import Head from 'next/head';
+import { Box, Center, Container, Grid } from '@chakra-ui/react';
+import { CompletedChallenges } from '../components/CompletedChallenges';
+import { Countdown } from '../components/Countdown';
+import { ExperienceBar } from '../components/ExperienceBar';
+import { Profile } from '../components/Profile';
 
 function Home() {
   return (
-    <div>
-      <Head>
-        <title>Move.IT</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
-      <main>
-        <Button>Teste</Button>
-        <Button variant="cancel">Teste</Button>
-        <Button variant="start">start</Button>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
-    </div>
+    <Container variant="content">
+      <ExperienceBar />
+      <Grid
+        templateColumns={['1fr', '1fr', '1fr', '1fr 1fr']}
+        gap="6.25rem"
+        marginTop="8"
+        alignItems="center"
+        h="90vh"
+      >
+        <Box display="flex" flex="1" flexDir="column">
+          <Profile />
+          <CompletedChallenges />
+          <Countdown />
+        </Box>
+        <Box display="flex" flex="1" flexDir="column" bg="red">
+          <Profile />
+        </Box>
+      </Grid>
+    </Container>
   );
 }
 
