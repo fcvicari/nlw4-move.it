@@ -1,12 +1,22 @@
-import { Button, Center, Container, Grid, Icon, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Center,
+  Container,
+  Grid,
+  Icon,
+  Progress,
+  Text,
+} from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 import { FaCheckCircle } from 'react-icons/fa';
 
 export function Countdown() {
   let countdownTimeout: NodeJS.Timeout;
+  const maxTime = 0.1 * 60;
 
-  const [time, setTime] = useState(0.05 * 60);
+  const [time, setTime] = useState(maxTime);
   const [isActive, setIsActive] = useState(false);
   const [hasFinish, setHasFinish] = useState(false);
 
@@ -19,7 +29,7 @@ export function Countdown() {
     setIsActive(!isActive);
     if (isActive) {
       clearTimeout(countdownTimeout);
-      setTime(0.05 * 60);
+      setTime(maxTime);
     }
   }
 
@@ -66,16 +76,26 @@ export function Countdown() {
       {hasFinish ? (
         <Container marginTop="2rem" w="100%" h="5rem" variant="countdownFinish">
           <Center>
-            Ciclo encerrado
-            <Icon
-              name="Finish"
-              as={FaCheckCircle}
-              w={6}
-              h={6}
-              color="green.500"
-              marginLeft="1rem"
-            />
+            <Text>
+              Ciclo encerrado
+              <Icon
+                name="Finish"
+                as={FaCheckCircle}
+                w={6}
+                h={6}
+                color="green.500"
+                marginLeft="1rem"
+              />
+            </Text>
           </Center>
+          <Progress
+            size="xs"
+            colorScheme="green"
+            w="100%"
+            value={100}
+            position="relative"
+            top="1rem"
+          />
         </Container>
       ) : (
         <Container marginTop="2rem" w="100%" h="5rem" variant="countdownButton">
@@ -85,7 +105,25 @@ export function Countdown() {
             h="5rem"
             variant={!isActive ? 'start' : 'stop'}
           >
-            {!isActive ? 'Iniciar ciclo' : 'Abandonar ciclo'}
+            <Box w="100%">
+              {!isActive ? (
+                'Iniciar ciclo'
+              ) : (
+                <>
+                  <Text>Ciclo encerrado</Text>
+                  <Progress
+                    size="xs"
+                    colorScheme="green"
+                    min={maxTime}
+                    max={0}
+                    value={time}
+                    position="relative"
+                    top="1.20rem"
+                    hasStripe
+                  />
+                </>
+              )}
+            </Box>
           </Button>
         </Container>
       )}
