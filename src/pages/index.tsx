@@ -9,7 +9,7 @@ function Home() {
   return (
     <Container variant="content">
       <ExperienceBar />
-      <Grid flex="1" h="90vh" alignItems="center">
+      <Grid flex="1" h="90vh" alignItems={['top', 'center']}>
         <Box>
           <Grid
             templateColumns={['1fr', '1fr 1fr']}

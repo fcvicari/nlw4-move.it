@@ -15,7 +15,7 @@ export function ChallengeBox() {
             height="43px"
           />
           <Text variant="challengeText">
-            Complete-os e ganhe experiência e avance de leve.
+            Complete-os e ganhe experiência e avance de level.
           </Text>
         </Box>
       </Container>
