@@ -1,7 +1,11 @@
 import { Avatar, Box, Center, Flex, Icon, Text } from '@chakra-ui/react';
+import { useContext } from 'react';
 import { GoArrowUp } from 'react-icons/go';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 export function Profile() {
+  const { level } = useContext(ChallengesContext);
+
   return (
     <Flex>
       <Center>
@@ -24,7 +28,7 @@ export function Profile() {
               color="green.500"
               marginRight="0.5rem"
             />
-            <Text as="p">Level 1</Text>
+            <Text as="p">Level {level}</Text>
           </Box>
         </Box>
       </Center>

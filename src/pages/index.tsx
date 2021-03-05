@@ -4,6 +4,7 @@ import { CompletedChallenges } from '../components/CompletedChallenges';
 import { Countdown } from '../components/Countdown';
 import { ExperienceBar } from '../components/ExperienceBar';
 import { Profile } from '../components/Profile';
+import { CountdownProvider } from '../contexts/CountdownContext';
 
 function Home() {
   return (
@@ -13,18 +14,20 @@ function Home() {
         <Box>
           <Grid
             templateColumns={['1fr', '1fr', '1fr', '1fr 1fr']}
-            gap={['2.25rem', '2.25rem', '2.25rem', '6.25rem']}
-            marginTop="8"
+            gap={['2.25rem', '2.25rem', '2.25rem', '4.25rem']}
+            marginTop={['2rem', '0']}
             flex="1"
           >
-            <Box display="flex" flex="1" flexDir="column">
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </Box>
-            <Box h="100%" display="flex" flex="1" flexDir="row">
-              <ChallengeBox />
-            </Box>
+            <CountdownProvider>
+              <Box display="flex" flex="1" flexDir="column">
+                <Profile />
+                <CompletedChallenges />
+                <Countdown />
+              </Box>
+              <Box h="100%" display="flex" flex="1" flexDir="row">
+                <ChallengeBox />
+              </Box>
+            </CountdownProvider>
           </Grid>
         </Box>
       </Grid>

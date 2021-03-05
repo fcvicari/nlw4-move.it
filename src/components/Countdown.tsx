@@ -8,47 +8,25 @@ import {
   Progress,
   Text,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 
 import { FaCheckCircle } from 'react-icons/fa';
+import { CountdownContext } from '../contexts/CountdownContext';
 
 export function Countdown() {
-  let countdownTimeout: NodeJS.Timeout;
-  const maxTime = 0.1 * 60;
-
-  const [time, setTime] = useState(maxTime);
-  const [isActive, setIsActive] = useState(false);
-  const [hasFinish, setHasFinish] = useState(false);
+  const {
+    maxTime,
+    time,
+    isActive,
+    hasFinish,
+    resetCountdown,
+    startCountdown,
+  } = useContext(CountdownContext);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
-
-  function startCountdown() {
-    setIsActive(!isActive);
-    if (isActive) {
-      clearTimeout(countdownTimeout);
-      setTime(maxTime);
-    }
-  }
-
-  useEffect(() => {
-    if (hasFinish) {
-      console.log('finalizou');
-    }
-  }, [hasFinish]);
-
-  useEffect(() => {
-    if (isActive && time > 0) {
-      countdownTimeout = setTimeout(() => {
-        setTime(time - 1);
-      }, 1000);
-    } else if (isActive && time === 0) {
-      setIsActive(false);
-      setHasFinish(true);
-    }
-  }, [isActive, time]);
 
   return (
     <Grid>
@@ -115,7 +93,7 @@ export function Countdown() {
           variant="countdownButton"
         >
           <Button
-            onClick={startCountdown}
+            onClick={isActive ? resetCountdown : startCountdown}
             w="100%"
             h="5rem"
             variant={!isActive ? 'start' : 'stop'}

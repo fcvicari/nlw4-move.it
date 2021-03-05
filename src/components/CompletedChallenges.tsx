@@ -1,6 +1,10 @@
 import { Box, Text } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { ChallengesContext } from '../contexts/ChallengesContext';
 
 export function CompletedChallenges() {
+  const { challengeComplete } = useContext(ChallengesContext);
+
   return (
     <Box
       display="flex"
@@ -15,7 +19,7 @@ export function CompletedChallenges() {
         Desafios completos
       </Text>
       <Text as="span" fontSize={['0.95rem', '1.5rem']}>
-        5
+        {challengeComplete}
       </Text>
     </Box>
   );
