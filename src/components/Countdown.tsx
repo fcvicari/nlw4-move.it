@@ -125,7 +125,7 @@ export function Countdown() {
                 'Iniciar ciclo'
               ) : (
                 <>
-                  <Text>Ciclo encerrado</Text>
+                  <Text>Abandonar ciclo</Text>
                   <Progress
                     size="xs"
                     colorScheme="green"
