@@ -8,10 +8,10 @@ export function Profile() {
         <Avatar
           name="Avatar Profile"
           src="https://github.com/fcvicari.png"
-          w="5.5rem"
-          h="5.5rem"
+          w={['4rem', '5.5rem']}
+          h={['4rem', '5.5rem']}
         />
-        <Box marginLeft="1.5rem">
+        <Box marginLeft={['0.75rem', '1.5rem']}>
           <Text color="gray.800" as="strong">
             Fernando Cezar Vicari
           </Text>

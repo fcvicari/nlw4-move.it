@@ -8,13 +8,13 @@ export function CompletedChallenges() {
       justifyContent="space-between"
       borderBottom="0.2rem solid #D7D8DA"
       margin={['1rem 0', '3.5rem 0']}
-      paddingBottom="1rem"
+      paddingBottom={['0.5rem', '1rem']}
       fontWeight="500"
     >
-      <Text as="span" fontSize="1.25rem">
+      <Text as="span" fontSize={['0.85rem', '1.25rem']}>
         Desafios completos
       </Text>
-      <Text as="span" fontSize="1.5rem">
+      <Text as="span" fontSize={['0.95rem', '1.5rem']}>
         5
       </Text>
     </Box>

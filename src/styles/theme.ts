@@ -39,26 +39,11 @@ const customTheme = extendTheme({
     heading: 'Inter, sans-serif',
     mono: 'Menlo, monospace',
   },
-  fontSizes: {
-    xs: '0.75rem',
-    sm: '0.875rem',
-    md: '1rem',
-    lg: '1.125rem',
-    xl: '1.25rem',
-    '2xl': '1.5rem',
-    '3xl': '1.875rem',
-    '4xl': '2.25rem',
-    '5xl': '3rem',
-    '6xl': '3.75rem',
-    '7xl': '4.5rem',
-    '8xl': '6rem',
-    '9xl': '8rem',
-  },
   components: {
     Container: {
       variants: {
         content: {
-          padding: '1.5rem 1rem',
+          padding: ['0.5rem 1rem', '1.5rem 1rem'],
           maxWidth: '992px',
           margin: '0 auto',
           height: '100vh',
@@ -71,7 +56,7 @@ const customTheme = extendTheme({
           position: 'relative',
           borderRadius: '4px',
           maxWidth: '100%',
-          margin: '0 1.5rem',
+          margin: ['0 0.75rem', '0 1.5rem'],
         },
         Experience: {
           flex: '1',
@@ -98,7 +83,7 @@ const customTheme = extendTheme({
           justifyContent: 'space-evenly',
           alignItems: 'center',
           textAlign: 'center',
-          fontSize: ['5.5rem', '7rem'],
+          fontSize: ['2.5rem', '7rem'],
           bgColor: 'white',
           borderRadius: '5px',
           boxShadow: '0 0 60px rgba(0, 0, 0, 0.05)',
@@ -129,7 +114,10 @@ const customTheme = extendTheme({
           bg: 'white',
           borderRadius: '5px',
           boxShadow: '0 0 60px rgba(0, 0, 0, 0.05)',
-          padding: '1.5rem 2rem',
+          padding: {
+            base: '0.5rem 1rem',
+            sm: '1.5rem 2rem',
+          },
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -140,7 +128,11 @@ const customTheme = extendTheme({
     },
     Text: {
       variants: {
+        Experience: {
+          fontSize: ['0.7rem', '1rem'],
+        },
         CurrentExperience: {
+          fontSize: ['0.7rem', '1rem'],
           position: 'absolute',
           top: '1',
           transform: 'translateX(-50%)',
@@ -151,7 +143,7 @@ const customTheme = extendTheme({
           alignItens: 'center',
           textAlign: 'center',
           justifyContent: 'center',
-          fontSize: '6.15rem',
+          fontSize: ['2.0rem', '6.15rem'],
         },
         countdownRight: {
           flex: '1',
@@ -163,17 +155,35 @@ const customTheme = extendTheme({
         },
         challengeTitle: {
           textAlign: 'center',
-          fontSize: '2rem',
+          fontSize: {
+            base: '1.5rem',
+            sm: '2rem',
+          },
           fontWeight: '600',
-          lineHeight: '2rem',
-          padding: '2rem',
+          lineHeight: {
+            base: '1.5rem',
+            sm: '2.5rem',
+          },
+          padding: {
+            base: '0.75rem',
+            sm: '2rem',
+          },
         },
         challengeText: {
           textAlign: 'center',
-          fontSize: '1rem',
+          fontSize: {
+            base: '0.75rem',
+            sm: '1rem',
+          },
           fontWeight: '400',
-          lineHeight: '1.2rem',
-          padding: '1rem',
+          lineHeight: {
+            base: '1rem',
+            sm: '1.5rem',
+          },
+          padding: {
+            base: '0.2rem',
+            sm: '1rem',
+          },
         },
       },
     },

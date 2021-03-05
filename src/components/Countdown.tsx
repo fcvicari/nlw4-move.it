@@ -74,7 +74,12 @@ export function Countdown() {
         </Container>
       </Container>
       {hasFinish ? (
-        <Container marginTop="2rem" w="100%" h="5rem" variant="countdownFinish">
+        <Container
+          marginTop={['1rem', '2rem']}
+          w="100%"
+          h="5rem"
+          variant="countdownFinish"
+        >
           <Center>
             <Text>
               Ciclo encerrado
@@ -98,7 +103,12 @@ export function Countdown() {
           />
         </Container>
       ) : (
-        <Container marginTop="2rem" w="100%" h="5rem" variant="countdownButton">
+        <Container
+          marginTop={['1rem', '2rem']}
+          w="100%"
+          h="5rem"
+          variant="countdownButton"
+        >
           <Button
             onClick={startCountdown}
             w="100%"

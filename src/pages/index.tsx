@@ -1,4 +1,4 @@
-import { Box, Center, Container, Grid } from '@chakra-ui/react';
+import { Box, Container, Grid } from '@chakra-ui/react';
 import { ChallengeBox } from '../components/ChallengeBox';
 import { CompletedChallenges } from '../components/CompletedChallenges';
 import { Countdown } from '../components/Countdown';
@@ -12,8 +12,8 @@ function Home() {
       <Grid flex="1" h="90vh" alignItems="center">
         <Box>
           <Grid
-            templateColumns={['1fr', '1fr', '1fr', '1fr 1fr']}
-            gap={['2.25rem', '2.25rem', '2.25rem', '6.25rem']}
+            templateColumns={['1fr', '1fr 1fr']}
+            gap={['2.25rem', '6.25rem']}
             marginTop="8"
             flex="1"
           >
