@@ -52,7 +52,12 @@ export function Countdown() {
 
   return (
     <Grid>
-      <Container variant="countdownContainer" margin="0" padding="0" flex="1">
+      <Container
+        variant="countdownContainer"
+        margin="0"
+        padding={['0 4rem', '0']}
+        flex="1"
+      >
         <Container variant="countdownNumber">
           <Text as="span" variant="countdownRight">
             {minuteLeft}
