@@ -81,6 +81,8 @@ const customTheme = extendTheme({
         countdownNumber: {
           flex: '1',
           display: 'flex',
+          padding: '0',
+          margin: '0',
           justifyContent: 'space-evenly',
           alignItems: 'center',
           textAlign: 'center',
