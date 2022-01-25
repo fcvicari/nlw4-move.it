@@ -10,7 +10,7 @@ const customTheme = extendTheme({
         width: '100vw',
       },
       a: {
-        color: 'teal.500',
+        color: 'gray.800',
       },
     },
   },
